@@ -24,10 +24,10 @@ Este roteiro foi desenhado para conduzir uma reunião presencial (ou conversa de
 * **Fala sugerida:**
   > *"Nanda, Max, tudo bem? Eu conheci o Cactus e fiquei muito impressionado com o que vocês montaram aqui no Alto da Boa Vista. Vocês têm uma comunidade fiel, mais de 3.700 seguidores no Instagram e uma nota excelente de 4,1 no MaCamp. É visível o carinho com o espaço e a tranquilidade da sombra da Mata Atlântica."*
 
-### Minuto 2 a 4: O "Ponto Cego" (Slide 2)
-* **Objetivo:** Fazer eles perceberem que estão dependendo apenas de quem já os conhece.
+### Minuto 2 a 4: A Oportunidade dos Chalés & Google (Slide 2)
+* **Objetivo:** Mostrar de forma construtiva a oportunidade de abrir um canal no Google para atrair reservas antecipadas nos chalés.
 * **Fala sugerida:**
-  > *"Mas eu fiz uma análise da presença de vocês na internet e notei um detalhe importante: quem já conhece vocês no Instagram ama o lugar. Porém, o turista de fora que abre o Google e digita 'camping em Itacaré' ou 'chalé em Itacaré' hoje não encontra o Cactus. Ele cai no Rai e Luc ou nos outros campings que têm site e dezenas de avaliações no mapa. Além disso, o chalé de vocês — que é o produto de maior valor — não tem fotos detalhadas nem preços visíveis, então o hóspede acaba não reservando."*
+  > *"O trabalho de vocês no Instagram é super acolhedor e construiu uma comunidade que realmente curte o lugar. Ao mesmo tempo, existe uma oportunidade muito sólida que podemos somar a isso: muitos turistas — principalmente casais e famílias que procuram chalés — pesquisam direto no Google com semanas de antecedência. Se eles encontrarem o Cactus com uma página clara, fotos dos chalés e botão de WhatsApp, vocês garantem essas reservas antes mesmo do feriado chegar."*
 
 ### Minuto 4 a 6: A Demonstração Prática (Slide 3 & 4)
 * **Objetivo:** Apresentar a solução já tangível (mostrar a tela do protótipo no celular ou tablet).
