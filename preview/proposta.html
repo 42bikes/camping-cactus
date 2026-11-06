@@ -590,6 +590,7 @@
         <div class="story-progress-bar"><div class="story-progress-fill"></div></div>
         <div class="story-progress-bar"><div class="story-progress-fill"></div></div>
         <div class="story-progress-bar"><div class="story-progress-fill"></div></div>
+        <div class="story-progress-bar"><div class="story-progress-fill"></div></div>
       </div>
 
       <div class="stories-meta-row">
@@ -722,15 +723,15 @@
 
       <!-- CARD 5: SIMULADOR DE RETORNO (ROI) & PERMUTA -->
       <section class="story-card" data-index="4">
-        <div class="kicker" style="color: var(--moss);">🏡 Tranquilidade & Retorno Rápido</div>
-        <h2 class="card-title">Apenas 2 ou 3 reservas de chalé e o site já está 100% pago</h2>
+        <div class="kicker" style="color: var(--moss);">🏡 Tranquilidade & Retorno Imediato</div>
+        <h2 class="card-title">Apenas 1 final de semana no chalé e o site já está 100% pago</h2>
         <p class="card-subtitle">
           O alívio de ver os chalés reservados com semanas de antecedência, com Pix na conta e sem a incerteza de esperar hóspede bater no portão de última hora.
         </p>
 
         <div class="roi-calculator" style="background: #f4f8f2; border-color: #b7dbab;">
           <div class="roi-title">
-            <span>✨ Simulação Real (Chalé para Casal / Feriado)</span>
+            <span>✨ Simulação com a Diária do Chalé</span>
           </div>
 
           <div style="font-size: 0.82rem; color: var(--ink-muted); margin-bottom: 4px;">
@@ -742,9 +743,9 @@
           </div>
 
           <div class="roi-result-box" style="padding: 12px; border-color: #b7dbab;">
-            Com apenas <strong id="diariasPagas" style="font-size: 1.25rem;">2 a 3 casais</strong> hospedados (apenas <span id="numNoites">6 a 9 noites</span> no ano inteiro), o projeto se paga sozinho.<br>
+            Com apenas <strong id="diariasPagas" style="font-size: 1.25rem; color: var(--clay);">1 casal em 1 feriado</strong> (apenas <span id="numNoites">2 a 4 diárias</span> no ano inteiro), o projeto está <strong>100% quitado</strong>.<br>
             <span style="font-size: 0.76rem; color: var(--forest-deep); font-weight: 500; display: block; margin-top: 4px;">
-              🌿 Todas as outras 355 noites do ano são lucro 100% líquido no bolso de vocês, sem taxa de comissão de intermediários.
+              🌿 As outras 360 noites do ano são lucro 100% livre no bolso de vocês, sem pagar comissão para intermediários.
             </span>
           </div>
         </div>
@@ -753,38 +754,42 @@
         <div class="touch-box" style="background: #faf6ee; border: 1.5px dashed var(--clay); margin-top: 10px;">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
             <span style="font-size: 1.2rem;">🤝</span>
-            <strong style="color: var(--forest-deep); font-size: 0.9rem;">Abertos a Parceria & Permuta de Diárias</strong>
+            <strong style="color: var(--forest-deep); font-size: 0.9rem;">Facilidade: Aceitamos Permuta Parcial de Diárias</strong>
           </div>
           <p style="font-size: 0.8rem; color: var(--ink-muted); line-height: 1.45;">
-            Sabemos o carinho e o custo de manter um espaço lindo em Itacaré. Se for mais confortável para o caixa de vocês agora, <strong>topamos combinar parte do pagamento em permuta de diárias no chalé</strong> (para usarmos em dias tranquilos fora de feriado).
+            Se quiserem preservar o fluxo de caixa agora, <strong>topamos combinar parte do valor em permuta de diárias no chalé</strong> (para usarmos em dias tranquilos fora de feriado).
           </p>
           <div style="font-size: 0.75rem; color: var(--clay-hover); font-weight: 700; margin-top: 6px;">
-            ✓ Menos dinheiro saindo do bolso &bull; O Cactus no ar para a temporada
+            ✓ Exemplo: R$ 650 em dinheiro + 2 diárias de chalé &bull; O Cactus no ar para a temporada!
           </div>
         </div>
       </section>
 
-      <!-- CARD 6: PACOTES -->
+      <!-- CARD 6: PACOTES COM VALOR ACESSÍVEL -->
       <section class="story-card" data-index="5">
-        <div class="kicker">05. Escolha o Pacote</div>
-        <h2 class="card-title">Dois formatos simples e sem enrolação</h2>
-        <p class="card-subtitle">Toque no pacote de sua preferência:</p>
+        <div class="kicker">05. Investimento Acessível</div>
+        <h2 class="card-title">Valores justos, transparentes e sem mensalidades</h2>
+        <p class="card-subtitle">Sem pegadinhas. Toque no pacote para ver os detalhes:</p>
 
         <!-- Pacote Presença -->
         <div class="package-chip" id="pkg1" onclick="selectPackage(1)">
           <div class="package-header">
             <div>
               <div class="package-name">Pacote Presença</div>
-              <div style="font-size: 0.75rem; color: var(--ink-muted);">Ideal para entrar no ar rápido</div>
+              <div style="font-size: 0.75rem; color: var(--ink-muted);">Para colocar o Cactus no mapa rápido</div>
             </div>
-            <div class="package-price">R$ 1.800</div>
+            <div style="text-align: right;">
+              <span style="font-size: 0.75rem; text-decoration: line-through; color: var(--ink-muted); display: block;">R$ 980</span>
+              <div class="package-price" style="font-size: 1.3rem;">R$ 590</div>
+              <span style="font-size: 0.72rem; color: var(--moss); font-weight: 700;">ou 2x de R$ 295 no Pix</span>
+            </div>
           </div>
           <ul class="feature-list">
-            <li>Landing page mobile-first completa</li>
-            <li>Google Meu Negócio configurado</li>
+            <li>Landing page mobile-first rápida (carrega em 1s)</li>
+            <li>Google Maps e Google Meu Negócio configurados</li>
             <li>Botão de WhatsApp com mensagem automática</li>
-            <li>Versão bilingue (Português & Inglês)</li>
-            <li>Entrega em 5 dias úteis</li>
+            <li>Versão bilingue básica (Português & Inglês)</li>
+            <li>No ar em 5 dias úteis</li>
           </ul>
         </div>
 
@@ -796,27 +801,74 @@
           <div class="package-header">
             <div>
               <div class="package-name">Temporada Completa</div>
-              <div style="font-size: 0.75rem; color: var(--ink-muted);">Foco total em chalés e motorhome</div>
+              <div style="font-size: 0.75rem; color: var(--ink-muted);">Destaque total para os Chalés e Fotos</div>
             </div>
-            <div class="package-price">R$ 2.800</div>
+            <div style="text-align: right;">
+              <span style="font-size: 0.75rem; text-decoration: line-through; color: var(--ink-muted); display: block;">R$ 1.600</span>
+              <div class="package-price" style="font-size: 1.35rem; color: var(--forest-deep);">R$ 1.150</div>
+              <span style="font-size: 0.72rem; color: var(--moss); font-weight: 700;">ou 2x de R$ 575 no Pix</span>
+            </div>
           </div>
           <ul class="feature-list">
-            <li><strong>Tudo do Pacote Presença</strong></li>
-            <li>Vitrine dedicada para os 2 Chalés</li>
-            <li>Sessão de fotos de 1h no camping</li>
-            <li>Display com QR Code para o balcão</li>
-            <li>1 mês de acompanhamento pós-lançamento</li>
+            <li><strong>Tudo do Pacote Presença incluído</strong></li>
+            <li>Vitrine dedicada exclusiva para os 2 Chalés</li>
+            <li>Sessão de fotos presencial de 1h em alta resolução</li>
+            <li>Display com QR Code físico para o balcão (avaliações Google)</li>
+            <li>1 mês de suporte e acompanhamento pós-lançamento</li>
           </ul>
+          <div style="background: rgba(127, 156, 91, 0.18); border-radius: 6px; padding: 6px 10px; margin-top: 8px; font-size: 0.75rem; color: var(--forest-deep); font-weight: 600;">
+            🤝 Opção com Permuta: R$ 650 em dinheiro + 2 diárias de chalé!
+          </div>
         </div>
 
-        <div style="font-size: 0.78rem; text-align: center; color: var(--ink-muted); margin-top: 4px;">
-          Forma de pagamento: 50% de entrada + 50% na aprovação final.
+        <div style="font-size: 0.78rem; text-align: center; color: var(--ink-muted); margin-top: 6px;">
+          Condição facilitada: 50% no início e 50% após o site estar 100% aprovado.
         </div>
       </section>
 
-      <!-- CARD 7: CRONOGRAMA & FECHAMENTO -->
+      <!-- CARD 7: QUEM SOU EU & POR QUE FECHAR COMIGO -->
       <section class="story-card" data-index="6">
-        <div class="kicker">06. Próximo Passo</div>
+        <div class="kicker" style="color: var(--moss);">🤝 Quem Está Por Trás do Projeto</div>
+        <h2 class="card-title">Arthur Horyu — Tecnologia com alma, estratégia com raízes</h2>
+        <p class="card-subtitle">
+          Desenvolvedor Full Stack, Designer Estratégico e Produtor Audiovisual. Ajudo negócios locais e atrativos turísticos a conquistarem independência digital.
+        </p>
+
+        <div class="touch-box" style="background: #fdfaf6; border-color: rgba(30, 58, 45, 0.15);">
+          <div style="font-size: 0.88rem; font-weight: 700; color: var(--forest-deep); margin-bottom: 8px;">
+            Por que fechar este projeto comigo?
+          </div>
+
+          <div style="margin-bottom: 10px;">
+            <strong style="color: var(--clay); font-size: 0.82rem; display: block;">🌿 1. Contato Direto & Olho no Olho</strong>
+            <p style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 2px;">
+              Sem agência distante ou atendentes de suporte. Vocês falam diretamente comigo aqui em Itacaré, alinhando tudo de forma rápida e humana.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 10px;">
+            <strong style="color: var(--clay); font-size: 0.82rem; display: block;">📸 2. Olhar Audiovisual Integrado</strong>
+            <p style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 2px;">
+              Não uso modelos prontos genéricos. Uno fotos reais bem tratadas, textos autênticos e design que reflete a beleza rústica e arborizada do Camping Cactus.
+            </p>
+          </div>
+
+          <div>
+            <strong style="color: var(--clay); font-size: 0.82rem; display: block;">🔓 3. Soberania Digital Total</strong>
+            <p style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 2px;">
+              O site é 100% de vocês. Sem mensalidades abusivas, sem contratos de fidelidade e sem comissões de 20% comendo o lucro das suas diárias.
+            </p>
+          </div>
+        </div>
+
+        <a href="https://horyu-arthur.vercel.app/" target="_blank" class="tap-preview-link" style="background: var(--forest-deep); color: #c9f59f; border: 1px solid rgba(201, 245, 159, 0.35);">
+          Ver Meu Portfólio de Projetos ↗
+        </a>
+      </section>
+
+      <!-- CARD 8: CRONOGRAMA & FECHAMENTO -->
+      <section class="story-card" data-index="7">
+        <div class="kicker">07. Próximo Passo</div>
         <h2 class="card-title">No ar em 5 dias úteis</h2>
         <p class="card-subtitle">Sem atrapalhar em nada a rotina do camping:</p>
 
@@ -862,8 +914,8 @@
           </div>
         </div>
 
-        <a href="https://wa.me/5571986682428?text=Oi!%20Vi%20a%20proposta%20do%20site%20do%20Camping%20Cactus%20e%20gostaria%20de%20conversar." target="_blank" class="whatsapp-full-btn">
-          💬 Falar no WhatsApp com Nanda e Max
+        <a href="https://wa.me/5571986682428?text=Oi%20Arthur!%20Vi%20a%20proposta%20do%20site%20do%20Camping%20Cactus%20e%20gostaria%20de%20combinar%20os%20detalhes." target="_blank" class="whatsapp-full-btn">
+          💬 Falar no WhatsApp com Arthur
         </a>
       </section>
 
@@ -888,7 +940,7 @@
 
   <script>
     let currentIndex = 0;
-    const totalCards = 7;
+    const totalCards = 8;
     let isScrollMode = false;
 
     const cards = document.querySelectorAll('.story-card');
@@ -987,19 +1039,21 @@
       }
     });
 
-    // Simulador de ROI com apelo emocional (Finais de Semana / Casais)
+    // Simulador de ROI com apelo emocional (Teto de até 1.150)
     function updateRoi() {
       const slider = document.getElementById('diariaSlider');
       const val = parseInt(slider.value, 10);
       document.getElementById('diariaVal').textContent = val;
 
-      const minNoites = Math.ceil(1800 / val);
-      const maxNoites = Math.ceil(2800 / val);
-      const minCasais = Math.max(1, Math.ceil(minNoites / 3));
-      const maxCasais = Math.max(2, Math.ceil(maxNoites / 3));
+      const minNoites = Math.ceil(590 / val);
+      const maxNoites = Math.ceil(1150 / val);
 
-      document.getElementById('diariasPagas').textContent = `${minCasais} a ${maxCasais} casais`;
-      document.getElementById('numNoites').textContent = `${minNoites} a ${maxNoites} noites`;
+      if (maxNoites <= 4) {
+        document.getElementById('diariasPagas').textContent = `1 único casal`;
+      } else {
+        document.getElementById('diariasPagas').textContent = `1 a 2 casais`;
+      }
+      document.getElementById('numNoites').textContent = `${minNoites} a ${maxNoites} diárias`;
     }
 
     // Seleção de Pacotes
