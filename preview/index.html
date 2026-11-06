@@ -939,6 +939,23 @@
 
     .map-caption .icon { width: 15px; height: 15px; color: var(--clay); }
 
+    .map-pin {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -100%);
+      z-index: 3;
+      pointer-events: none;
+      filter: drop-shadow(0 6px 12px rgba(27, 36, 28, 0.4));
+      animation: map-pin-pulse 1.8s var(--ease) infinite;
+    }
+
+    @keyframes map-pin-pulse {
+      0% { transform: translate(-50%, -100%) scale(1); }
+      50% { transform: translate(-50%, -100%) scale(1.12); }
+      100% { transform: translate(-50%, -100%) scale(1); }
+    }
+
     .local-copy { display: flex; flex-direction: column; }
 
     .local-copy > p {
@@ -1866,11 +1883,17 @@
           <div class="map-wrap reveal">
             <iframe
               title="Mapa do Camping Cactus em Itacaré"
-              src="https://maps.google.com/maps?q=Rua%20dos%20Jacarand%C3%A1s%2C%2094%2C%20Alto%20da%20Boa%20Vista%2C%20Itacar%C3%A9%20-%20BA&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Rua%20dos%20Jacarand%C3%A1s%2C%2094%2C%20Alto%20da%20Boa%20Vista%2C%20Itacar%C3%A9%20-%20BA&t=&z=17&ie=UTF8&iwloc=&output=embed"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen
             ></iframe>
+            <div class="map-pin" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="56" height="56" fill="none" stroke="#c06a3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="rgba(192,106,63,0.25)" />
+                <circle cx="12" cy="10" r="2.5" fill="#c06a3f" stroke="#fff" />
+              </svg>
+            </div>
             <a class="map-caption" href="https://maps.google.com/?q=Rua+dos+Jacarand%C3%A1s,+94,+Itacar%C3%A9+-+BA" target="_blank" rel="noopener">
               <svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg>
               Abrir no Google Maps
