@@ -341,18 +341,40 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     }
 
-    .roi-result-box {
-      background: var(--white);
-      border-radius: var(--radius-sm);
-      padding: 10px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--forest-deep);
-      border: 1px solid #d2e4cb;
+    /* Grid 2x2 Técnica & Organizada */
+    .tech-grid-2x2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 12px;
     }
-    .roi-result-box strong {
-      color: var(--clay);
-      font-size: 1.1rem;
+    .tech-mini-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 14px 12px;
+      box-shadow: 0 1px 4px rgba(19, 36, 27, 0.04);
+    }
+    .tech-mini-card-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--moss);
+      font-weight: 800;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .tech-mini-card h4 {
+      font-size: 0.86rem;
+      color: var(--forest-deep);
+      font-weight: 700;
+      margin-bottom: 3px;
+      line-height: 1.25;
+    }
+    .tech-mini-card p {
+      font-size: 0.74rem;
+      color: var(--ink-muted);
+      line-height: 1.35;
     }
 
     /* Mockup Mobile Interativo para ver o site */
@@ -633,46 +655,46 @@
         </div>
       </section>
 
-      <!-- CARD 2: SOBRE OS CHALÉS E O GOOGLE -->
+      <!-- CARD 2: TUDO EM UM LUGAR SÓ -->
       <section class="story-card" data-index="1">
-        <div class="kicker" style="color: var(--moss);">🏡 O que notei sobre as reservas</div>
-        <h2 class="card-title">Quem procura chalé em Itacaré costuma planejar pelo Google</h2>
+        <div class="kicker" style="color: var(--moss);">🌿 Facilitando o dia a dia</div>
+        <h2 class="card-title">Tudo o que o Cactus oferece reunido em um lugar só</h2>
         <p class="card-subtitle">
-          O Instagram de vocês é massa demais e passa a energia boa daqui. Mas quem vem de fora — principalmente casais e famílias que querem a privacidade do chalé — quase sempre abre o Google para planejar a viagem com antecedência.
+          O Instagram de vocês é massa demais e mostra a energia do lugar. Mas quem tá planejando vir pra Itacaré — seja de barraca, motorhome ou chalé — quer tirar dúvidas rápido sobre sombra, cozinha, banheiros e regras antes de chamar.
         </p>
 
         <div class="touch-box" style="background: #faf8f2; border: 1px solid var(--line); margin-bottom: 12px; padding: 14px;">
           <div style="margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px dashed var(--line);">
-            <strong style="color: var(--forest-deep); font-size: 0.88rem; display: flex; align-items: center; gap: 6px;">
-              <span>🛏️</span> Fotos e detalhes do chalé em um só lugar
+            <strong style="color: var(--forest-deep); font-size: 0.88rem; display: flex; align-items: center; gap: 8px;">
+              <span>⛺</span> Toda a estrutura clara e visual
             </strong>
             <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 3px; line-height: 1.4;">
-              Quem procura chalé gosta de ver a cama, o banheiro e o que tem dentro logo de cara, sem precisar caçar fotos soltas no feed ou esperar resposta.
+              Barracas na sombra, motorhome, chalés, cozinha comunitária e banheiros. O viajante entende tudo em 1 minuto, sem precisar caçar informações soltas.
             </p>
           </div>
 
           <div style="margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px dashed var(--line);">
-            <strong style="color: var(--forest-deep); font-size: 0.88rem; display: flex; align-items: center; gap: 6px;">
-              <span>📍</span> Aparecer no mapa quando pesquisam onde ficar
+            <strong style="color: var(--forest-deep); font-size: 0.88rem; display: flex; align-items: center; gap: 8px;">
+              <span>📍</span> Localização e mapa certinho para quem vem de fora
             </strong>
             <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 3px; line-height: 1.4;">
-              Quando o viajante abre o Google Maps em Itacaré, ver o Cactus com fotos bonitas e localização certinha dá a segurança que falta para chamar vocês.
+              Quem está na estrada ou abrindo o Google Maps acha o Cactus de primeira, vendo fotos do quintal e a distância das praias e do centro.
             </p>
           </div>
 
           <div>
-            <strong style="color: var(--forest-deep); font-size: 0.88rem; display: flex; align-items: center; gap: 6px;">
-              <span>💬</span> A conversa começa direto no seu WhatsApp
+            <strong style="color: var(--forest-deep); font-size: 0.88rem; display: flex; align-items: center; gap: 8px;">
+              <span>💬</span> Menos tempo respondendo o básico, mais reservas no WhatsApp
             </strong>
             <p style="font-size: 0.8rem; color: var(--ink-muted); margin-top: 3px; line-height: 1.4;">
-              A pessoa olha, gosta do espaço e já clica para combinar as datas no WhatsApp. Sem taxa de intermediário, no jeito direto que vocês já atendem.
+              Em vez de vocês ficarem respondendo as mesmas perguntas o dia inteiro no direct, o hóspede já clica no WhatsApp sabendo o que quer e pronto para fechar.
             </p>
           </div>
         </div>
 
         <div class="touch-box" style="background: #f4f8f2; border: 1px solid #b7dbab; margin-top: 4px;">
           <p style="font-size: 0.82rem; color: var(--forest-deep); line-height: 1.45;">
-            🌿 A ideia é só facilitar a vida de quem está vindo e ajudar vocês a fecharem as datas dos chalés com antecedência, com calma e tranquilidade.
+            🌿 A ideia é dar esse conforto para quem está vindo e deixar o dia a dia de vocês mais leve, com as informações organizadas e o contato direto.
           </p>
         </div>
       </section>
@@ -723,61 +745,49 @@
         </p>
       </section>
 
-      <!-- CARD 5: BENEFÍCIOS INCLUSOS & PERMUTA AMIGÁVEL -->
+      <!-- CARD 5: PARTE TÉCNICA PRONTA & PERMUTA AMIGÁVEL -->
       <section class="story-card" data-index="4">
-        <div class="kicker" style="color: var(--moss);">🎁 Cuidado em Cada Detalhe</div>
-        <h2 class="card-title">Tudo incluso para vocês não esquentarem a cabeça</h2>
+        <div class="kicker" style="color: var(--moss);">🌿 Tudo pronto e configurado</div>
+        <h2 class="card-title">A parte técnica já fica 100% resolvida</h2>
         <p class="card-subtitle">
-          Sem custos escondidos, sem pegadinhas técnicas. Eu resolvo toda a estrutura digital para vocês focarem no que fazem de melhor: acolher as pessoas no camping.
+          Vocês não precisam contratar provedor, comprar domínio nem esquentar a cabeça com nada disso. Eu entrego tudo funcionando:
         </p>
 
-        <!-- GRID DE BENEFÍCIOS JÁ INCLUSOS -->
-        <div class="touch-box" style="background: #f7faf7; border-color: #b7dbab; padding: 14px;">
-          <div style="font-size: 0.88rem; font-weight: 700; color: var(--forest-deep); margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-            <span>✨ Facilidades que já entrego configuradas:</span>
+        <!-- GRID 2x2 MODERNA E LIMPA -->
+        <div class="tech-grid-2x2">
+          <div class="tech-mini-card">
+            <span class="tech-mini-card-tag">Endereço próprio</span>
+            <h4>Domínio .com.br</h4>
+            <p>1 ano de registro já incluso para o site oficial.</p>
           </div>
 
-          <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--line);">
-            <strong style="color: var(--forest-deep); font-size: 0.84rem; display: block;">🌐 Domínio Próprio Registrado por 1 Ano</strong>
-            <p style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 2px;">
-              O endereço oficial do Camping Cactus na internet (ex: .com.br) registrado e configurado sem complicação.
-            </p>
+          <div class="tech-mini-card">
+            <span class="tech-mini-card-tag">Hospedagem</span>
+            <h4>Servidor no ar</h4>
+            <p>Página rápida e estável, sem mensalidade técnica.</p>
           </div>
 
-          <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--line);">
-            <strong style="color: var(--forest-deep); font-size: 0.84rem; display: block;">☁️ Hospedagem Web Rápida & Gratuita</strong>
-            <p style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 2px;">
-              O site fica no ar em servidores rápidos e seguros, sem cobrança de mensalidades de servidor.
-            </p>
+          <div class="tech-mini-card">
+            <span class="tech-mini-card-tag">Atendimento</span>
+            <h4>WhatsApp pronto</h4>
+            <p>O clique já chega com as datas e dados da reserva.</p>
           </div>
 
-          <div style="margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px dashed var(--line);">
-            <strong style="color: var(--forest-deep); font-size: 0.84rem; display: block;">📱 Painel de Reservas Inteligente no WhatsApp</strong>
-            <p style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 2px;">
-              O turista clica e a mensagem já chega mastigada com data, número de hóspedes e tipo de espaço (barraca, motorhome ou chalé).
-            </p>
-          </div>
-
-          <div>
-            <strong style="color: var(--forest-deep); font-size: 0.84rem; display: block;">🔒 Certificado de Segurança SSL (Cadeado Verde)</strong>
-            <p style="font-size: 0.78rem; color: var(--ink-muted); margin-top: 2px;">
-              Navegação 100% segura e confiável para quem acessa pelo celular.
-            </p>
+          <div class="tech-mini-card">
+            <span class="tech-mini-card-tag">Segurança</span>
+            <h4>Cadeado SSL</h4>
+            <p>Navegação segura e confiável no celular do turista.</p>
           </div>
         </div>
 
         <!-- PARCERIA / PERMUTA LEVE E AMIGÁVEL -->
-        <div class="touch-box" style="background: #faf6ee; border: 1.5px dashed var(--clay); margin-top: 10px;">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-            <span style="font-size: 1.2rem;">🤝</span>
-            <strong style="color: var(--forest-deep); font-size: 0.9rem;">Parceria Amigável & Permuta Simples</strong>
-          </div>
+        <div class="touch-box" style="background: #faf7f0; border: 1px solid var(--line); margin-top: 8px; padding: 14px;">
+          <h4 style="color: var(--forest-deep); font-size: 0.88rem; margin-bottom: 4px; font-weight: 700;">
+            Uma troca boa para os dois lados:
+          </h4>
           <p style="font-size: 0.8rem; color: var(--ink-muted); line-height: 1.45;">
-            Como estou vivenciando o dia a dia do camping e adoro a energia daqui, <strong>podemos abater parte do valor em permuta simples de estadia</strong>. Uma troca justa, leve e que ajuda o fluxo de caixa de vocês.
+            Como estou por aqui curtindo a estadia no camping, super topo abater parte do valor em diárias. Fica mais leve para o caixa de vocês e a gente fortalece a parceria.
           </p>
-          <div style="font-size: 0.75rem; color: var(--clay-hover); font-weight: 700; margin-top: 6px;">
-            ✓ Menos dinheiro saindo do caixa &bull; Conexão leve e transparente
-          </div>
         </div>
       </section>
 
