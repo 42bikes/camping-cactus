@@ -720,36 +720,47 @@
         </p>
       </section>
 
-      <!-- CARD 5: SIMULADOR DE RETORNO (ROI) -->
+      <!-- CARD 5: SIMULADOR DE RETORNO (ROI) & PERMUTA -->
       <section class="story-card" data-index="4">
-        <div class="kicker">04. Retorno Rápido</div>
-        <h2 class="card-title">Quantas diárias pagam o investimento?</h2>
-        <p class="card-subtitle">Arraste a barra para ver como o projeto se paga com facilidade:</p>
+        <div class="kicker" style="color: var(--moss);">🏡 Tranquilidade & Retorno Rápido</div>
+        <h2 class="card-title">Apenas 2 ou 3 reservas de chalé e o site já está 100% pago</h2>
+        <p class="card-subtitle">
+          O alívio de ver os chalés reservados com semanas de antecedência, com Pix na conta e sem a incerteza de esperar hóspede bater no portão de última hora.
+        </p>
 
-        <div class="roi-calculator">
+        <div class="roi-calculator" style="background: #f4f8f2; border-color: #b7dbab;">
           <div class="roi-title">
-            <span>🏡 Simulação com os Chalés</span>
+            <span>✨ Simulação Real (Chalé para Casal / Feriado)</span>
           </div>
 
-          <div style="font-size: 0.82rem; color: var(--ink-muted);">
-            Valor estimado da diária do chalé: <strong>R$ <span id="diariaVal">200</span></strong>
+          <div style="font-size: 0.82rem; color: var(--ink-muted); margin-bottom: 4px;">
+            Média da diária do chalé na temporada: <strong>R$ <span id="diariaVal">280</span></strong>
           </div>
 
           <div class="roi-slider-container">
-            <input type="range" min="150" max="350" step="10" value="200" class="roi-slider" id="diariaSlider" oninput="updateRoi()" />
+            <input type="range" min="180" max="400" step="20" value="280" class="roi-slider" id="diariaSlider" oninput="updateRoi()" />
           </div>
 
-          <div class="roi-result-box">
-            Com apenas <strong id="diariasPagas">9 a 14</strong> diárias de chalé no ano todo, você paga <strong>100%</strong> do site.<br>
-            <span style="font-size: 0.75rem; color: var(--ink-muted);">Todo o resto das reservas é lucro direto, sem comissão do Booking (15-20%).</span>
+          <div class="roi-result-box" style="padding: 12px; border-color: #b7dbab;">
+            Com apenas <strong id="diariasPagas" style="font-size: 1.25rem;">2 a 3 casais</strong> hospedados (apenas <span id="numNoites">6 a 9 noites</span> no ano inteiro), o projeto se paga sozinho.<br>
+            <span style="font-size: 0.76rem; color: var(--forest-deep); font-weight: 500; display: block; margin-top: 4px;">
+              🌿 Todas as outras 355 noites do ano são lucro 100% líquido no bolso de vocês, sem taxa de comissão de intermediários.
+            </span>
           </div>
         </div>
 
-        <div class="touch-box" style="background: #faf8f3;">
-          <h4 style="font-size: 0.88rem; color: var(--forest-deep); margin-bottom: 4px;">🤝 Dinheiro direto no seu Pix</h4>
-          <p style="font-size: 0.8rem; color: var(--ink-muted);">
-            Sem mensalidades surpresas de plataformas. O turista fala com vocês e fecha na hora.
+        <!-- OPORTUNIDADE DE PERMUTA / PARCERIA -->
+        <div class="touch-box" style="background: #faf6ee; border: 1.5px dashed var(--clay); margin-top: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+            <span style="font-size: 1.2rem;">🤝</span>
+            <strong style="color: var(--forest-deep); font-size: 0.9rem;">Abertos a Parceria & Permuta de Diárias</strong>
+          </div>
+          <p style="font-size: 0.8rem; color: var(--ink-muted); line-height: 1.45;">
+            Sabemos o carinho e o custo de manter um espaço lindo em Itacaré. Se for mais confortável para o caixa de vocês agora, <strong>topamos combinar parte do pagamento em permuta de diárias no chalé</strong> (para usarmos em dias tranquilos fora de feriado).
           </p>
+          <div style="font-size: 0.75rem; color: var(--clay-hover); font-weight: 700; margin-top: 6px;">
+            ✓ Menos dinheiro saindo do bolso &bull; O Cactus no ar para a temporada
+          </div>
         </div>
       </section>
 
@@ -976,14 +987,19 @@
       }
     });
 
-    // Simulador de ROI
+    // Simulador de ROI com apelo emocional (Finais de Semana / Casais)
     function updateRoi() {
       const slider = document.getElementById('diariaSlider');
       const val = parseInt(slider.value, 10);
       document.getElementById('diariaVal').textContent = val;
-      const minD = Math.ceil(1800 / val);
-      const maxD = Math.ceil(2800 / val);
-      document.getElementById('diariasPagas').textContent = `${minD} a ${maxD}`;
+
+      const minNoites = Math.ceil(1800 / val);
+      const maxNoites = Math.ceil(2800 / val);
+      const minCasais = Math.max(1, Math.ceil(minNoites / 3));
+      const maxCasais = Math.max(2, Math.ceil(maxNoites / 3));
+
+      document.getElementById('diariasPagas').textContent = `${minCasais} a ${maxCasais} casais`;
+      document.getElementById('numNoites').textContent = `${minNoites} a ${maxNoites} noites`;
     }
 
     // Seleção de Pacotes
