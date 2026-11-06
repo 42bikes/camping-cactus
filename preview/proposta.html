@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apresentação de Proposta — Camping Cactus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1b241c;
+      --ink-muted: #536355;
+      --forest: #1e3a2d;
+      --forest-deep: #13241b;
+      --moss: #4e6f52;
+      --cactus: #7f9c5b;
+      --sand: #f3ecdf;
+      --paper: #fbf7ef;
+      --white: #fffdf8;
+      --clay: #c06a3f;
+      --clay-hover: #a6552d;
+      --line: rgba(27, 36, 28, 0.12);
+      --line-strong: rgba(27, 36, 28, 0.25);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "DM Sans", system-ui, -apple-system, sans-serif;
+      --shadow-lg: 0 30px 60px -20px rgba(19, 36, 27, 0.15), 0 10px 20px -10px rgba(19, 36, 27, 0.08);
+      --shadow-sm: 0 4px 16px rgba(19, 36, 27, 0.06);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--sans);
+      background-color: var(--forest-deep);
+      color: var(--ink);
+      line-height: 1.5;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    /* Barra Superior Fixa de Controle */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: rgba(19, 36, 27, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      z-index: 1000;
+      color: var(--sand);
+    }
+
+    .brand-tag {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-tag .badge {
+      background: rgba(127, 156, 91, 0.25);
+      color: #b7e38c;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(127, 156, 91, 0.4);
+    }
+
+    .deck-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .slide-counter {
+      font-size: 0.88rem;
+      color: rgba(243, 236, 223, 0.7);
+      min-width: 65px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--sand);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .view-toggle-btn {
+      background: var(--clay);
+      color: var(--white);
+      border: none;
+    }
+    .view-toggle-btn:hover {
+      background: var(--clay-hover);
+    }
+
+    /* Container de Slides */
+    .deck-wrapper {
+      padding-top: 64px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 40px;
+    }
+
+    .slide-container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .slide {
+      display: none;
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--line);
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    /* MODO SCROLL CONTÍNUO (quando alternado) */
+    body.scroll-mode .deck-wrapper {
+      display: block;
+      padding-top: 88px;
+      padding-bottom: 80px;
+    }
+    body.scroll-mode .slide {
+      display: block !important;
+      margin-bottom: 40px;
+      animation: none;
+    }
+    body.scroll-mode .deck-controls .nav-arrow-btn,
+    body.scroll-mode .slide-counter {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(14px) scale(0.995); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Estilos de Tipografia dos Slides */
+    .slide-header {
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+    }
+
+    .slide-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--clay);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slide-title {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      line-height: 1.2;
+      color: var(--forest-deep);
+      font-weight: 600;
+    }
+
+    .slide-subtitle {
+      font-size: 1.05rem;
+      color: var(--ink-muted);
+      margin-top: 8px;
+      max-width: 800px;
+    }
+
+    /* Grids & Cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-highlight {
+      border: 2px solid var(--forest);
+      background: #f7faf7;
+      position: relative;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--forest);
+      color: var(--sand);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Slide 1 - Capa */
+    .cover-slide {
+      background: linear-gradient(135deg, var(--forest-deep) 0%, var(--forest) 100%);
+      color: var(--sand);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 64px 56px;
+    }
+
+    .cover-slide .slide-title {
+      color: var(--sand);
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .cover-slide .slide-subtitle {
+      color: rgba(243, 236, 223, 0.85);
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .cover-meta {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      font-size: 0.9rem;
+      color: rgba(243, 236, 223, 0.7);
+    }
+
+    .cover-meta strong {
+      color: var(--sand);
+      display: block;
+      font-size: 1.05rem;
+      margin-top: 4px;
+    }
+
+    /* Métricas / Diagnóstico */
+    .stat-box {
+      background: var(--white);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--clay);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-number.good { color: var(--moss); }
+    .stat-number.alert { color: #d04838; }
+
+    .stat-label {
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+      font-weight: 500;
+    }
+
+    .problem-box {
+      background: #fdf5f2;
+      border-left: 4px solid var(--clay);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin-bottom: 14px;
+    }
+    .problem-box h4 {
+      color: var(--clay-hover);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .problem-box p {
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+
+    /* Solução / Pilares */
+    .pillar-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(78, 111, 82, 0.15);
+      color: var(--moss);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .pillar-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--forest-deep);
+      margin-bottom: 8px;
+    }
+
+    .pillar-desc {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      line-height: 1.45;
+    }
+
+    /* Prévia Interativa / Mockup */
+    .preview-frame-container {
+      background: #111a13;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      border: 1px solid var(--line);
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .preview-actions-bar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--sand);
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+    }
+
+    .preview-live-frame {
+      width: 100%;
+      height: 480px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .btn-launch-preview {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #7f9c5b;
+      color: var(--forest-deep);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+    .btn-launch-preview:hover {
+      background: #96ba6d;
+    }
+
+    /* Tabela de Preços e Pacotes */
+    .package-price {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--forest-deep);
+      margin: 12px 0 16px 0;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .package-price span {
+      font-size: 0.95rem;
+      font-family: var(--sans);
+      color: var(--ink-muted);
+      font-weight: 400;
+    }
+
+    .package-features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .package-features li {
+      font-size: 0.88rem;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--line);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--ink);
+    }
+
+    .package-features li::before {
+      content: "✓";
+      color: var(--moss);
+      font-weight: 700;
+    }
+
+    .roi-callout {
+      background: #f1f8ed;
+      border: 1px solid #c7e5b9;
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: var(--forest-deep);
+      margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Cronograma de 5 Dias */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .timeline-step {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    .timeline-day {
+      font-weight: 800;
+      color: var(--clay);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+
+    .timeline-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--forest-deep);
+      margin-bottom: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      line-height: 1.35;
+    }
+
+    /* Próximo Passo & CTA */
+    .cta-banner {
+      background: var(--forest-deep);
+      color: var(--sand);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .cta-banner h3 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: var(--sand);
+    }
+
+    .cta-banner p {
+      color: rgba(243, 236, 223, 0.8);
+      max-width: 600px;
+      margin: 0 auto 20px auto;
+      font-size: 0.95rem;
+    }
+
+    .cta-button {
+      background: var(--clay);
+      color: var(--white);
+      border: none;
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .cta-button:hover {
+      background: var(--clay-hover);
+    }
+
+    /* Responsivo */
+    @media (max-width: 860px) {
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .timeline { grid-template-columns: 1fr; gap: 8px; text-align: left; }
+      .timeline-step { text-align: left; }
+      .slide { padding: 28px 20px; }
+      .slide-title { font-size: 1.8rem; }
+      .cover-slide { padding: 40px 24px; }
+      .cover-slide .slide-title { font-size: 2.2rem; }
+      .preview-live-frame { height: 380px; }
+    }
+
+    /* Print / PDF */
+    @media print {
+      body { background: white; color: black; }
+      .top-bar { display: none; }
+      .slide { display: block !important; page-break-after: always; box-shadow: none; border: 1px solid #ccc; margin-bottom: 20mm; }
+      .deck-wrapper { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE CONTROLE SUPERIOR -->
+  <header class="top-bar">
+    <div class="brand-tag">
+      <span>🌵 Camping Cactus</span>
+      <span class="badge">Apresentação da Proposta</span>
+    </div>
+
+    <div class="deck-controls">
+      <span class="slide-counter" id="slideIndicator">1 de 7</span>
+      <button class="nav-btn nav-arrow-btn" id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
+      <button class="nav-btn nav-arrow-btn" id="nextBtn" onclick="changeSlide(1)">Próximo →</button>
+      <button class="nav-btn view-toggle-btn" id="modeBtn" onclick="toggleMode()">Modo Contínuo</button>
+    </div>
+  </header>
+
+  <!-- CONTAINER DE SLIDES -->
+  <main class="deck-wrapper">
+    <div class="slide-container">
+
+      <!-- SLIDE 1: CAPA -->
+      <section class="slide cover-slide active" data-slide="1">
+        <div class="slide-kicker" style="color: #b7e38c;">PROPOSTA ESTRATÉGICA & PROTÓTIPO</div>
+        <h1 class="slide-title">Conectando o Camping Cactus ao Turista que Pesquisa no Google</h1>
+        <p class="slide-subtitle">
+          Como transformar os diferenciais do camping em reservas diretas pelo WhatsApp — sem intermediários, sem comissões e com posicionamento profissional em Itacaré.
+        </p>
+
+        <div class="cover-meta">
+          <div>
+            <span>Destinado a:</span>
+            <strong>Nanda & Max</strong>
+          </div>
+          <div>
+            <span>Local:</span>
+            <strong>Itacaré — Bahia</strong>
+          </div>
+          <div>
+            <span>Objetivo:</span>
+            <strong>Landing Page + Google Meu Negócio</strong>
+          </div>
+          <div>
+            <span>Prazo de Implementação:</span>
+            <strong>5 Dias Úteis</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 2: DIAGNÓSTICO DIGITAL -->
+      <section class="slide" data-slide="2">
+        <div class="slide-header">
+          <div class="slide-kicker">01. O DIAGNÓSTICO ATUAL</div>
+          <h2 class="slide-title">O Cactus tem ótimo produto, mas depende só de quem já o conhece</h2>
+          <p class="slide-subtitle">Hoje, quem já segue o Instagram se encanta. Mas o turista que está pesquisando agora no Google não encontra o camping.</p>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--forest-deep);">O que vocês já construíram com mérito:</h3>
+            <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+              <div class="stat-box" style="flex: 1;">
+                <div class="stat-number good">3.782</div>
+                <div class="stat-label">Seguidores fiéis no Instagram</div>
+              </div>
+              <div class="stat-box" style="flex: 1;">
+                <div class="stat-number good">4,1 ★</div>
+                <div class="stat-label">Nota no MaCamp (9 avaliações)</div>
+              </div>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--ink-muted);">
+              A estrutura é completa: barracas na sombra, motorhome até 7 metros, 2 chalés aconchegantes, cozinha comunitária e localização privilegiada no Alto da Boa Vista.
+            </p>
+          </div>
+
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 16px; color: var(--clay);">Onde o dinheiro e as diárias estão escapando:</h3>
+            
+            <div class="problem-box">
+              <h4>1. Ausência de Site Próprio</h4>
+              <p>O turista pesquisa "camping em Itacaré" ou "chalé em Itacaré" no Google e cai nos concorrentes (Rai e Luc, Pituba, etc.).</p>
+            </div>
+
+            <div class="problem-box">
+              <h4>2. Chalés sem Vitrine Oficial</h4>
+              <p>O chalé é a acomodação de maior valor do camping, mas não tem fotos fáceis de ver nem descritivo para quem não tem paciência de garimpar no feed.</p>
+            </div>
+
+            <div class="problem-box">
+              <h4>3. Ficha do Google & Avaliações</h4>
+              <p>O concorrente Rai e Luc tem 33 avaliações no Google; o Cactus tem pouca presença no mapa. Turista decide pelo número de estrelas no mapa.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 3: OS 3 PILARES DA SOLUÇÃO -->
+      <section class="slide" data-slide="3">
+        <div class="slide-header">
+          <div class="slide-kicker">02. A SOLUÇÃO COMPLETA</div>
+          <h2 class="slide-title">Os 3 Pilares para Encher o Camping o Ano Todo</h2>
+          <p class="slide-subtitle">Uma engrenagem simples e automática: o hóspede acha no Google, se apaixona na Landing Page e fecha direto no seu WhatsApp.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="pillar-icon">⚡</div>
+            <h3 class="pillar-title">1. Landing Page Rápida</h3>
+            <p class="pillar-desc">
+              Uma página leve, que carrega em 1 segundo no celular. Mostra fotos reais, diferenciais (sombra, wi-fi, pet friendly, chalés) e botão de WhatsApp que já vem com a mensagem pronta.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="pillar-icon">📍</div>
+            <h3 class="pillar-title">2. Google Meu Negócio</h3>
+            <p class="pillar-desc">
+              Configuração profissional no Google Maps: categoria certa, horários, fotos em alta, mapa de rotas e o link oficial do site para quem busca "camping perto de mim" ou em Itacaré.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="pillar-icon">⭐</div>
+            <h3 class="pillar-title">3. Máquina de Avaliações</h3>
+            <p class="pillar-desc">
+              Display com QR Code físico para colocar no balcão e chaveiros. No checkout, o hóspede aponta a câmera e deixa uma avaliação de 5 estrelas em 15 segundos. Meta: subir de 9 para 30+ avaliações.
+            </p>
+          </div>
+        </div>
+
+        <div class="roi-callout" style="margin-top: 24px;">
+          <span style="font-size: 1.3rem;">💡</span>
+          <div>
+            <strong>Sem intermediários:</strong> Você não paga os 15% a 20% de comissão cobrados pelo Booking ou Airbnb. O turista fala direto no seu WhatsApp e o pagamento cai na sua conta via Pix.
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: PRÉVIA AO VIVO DA LANDING PAGE -->
+      <section class="slide" data-slide="4">
+        <div class="slide-header">
+          <div class="slide-kicker">03. PROTÓTIPO FUNCIONAL</div>
+          <h2 class="slide-title">A Landing Page já está desenhada e pronta para demonstração</h2>
+          <p class="slide-subtitle">Não viemos só com ideias: trouxemos a versão preliminar da página já codificada e responsiva para vocês testarem.</p>
+        </div>
+
+        <div class="preview-frame-container">
+          <div class="preview-actions-bar">
+            <span>🖥️ Prévia Interativa (Baseada na identidade visual de Itacaré)</span>
+            <a href="index.html" target="_blank" class="btn-launch-preview">
+              Abrir em tela cheia ↗
+            </a>
+          </div>
+
+          <iframe src="index.html" class="preview-live-frame" title="Prévia Camping Cactus"></iframe>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; margin-top: 14px; font-size: 0.85rem; color: var(--ink-muted);">
+          <span>✓ Seção exclusiva para Chalés</span>
+          <span>✓ Espaço para Motorhome (até 7m)</span>
+          <span>✓ Botão WhatsApp pré-preenchido</span>
+          <span>✓ Mapa de distâncias das praias</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: PACOTES DE INVESTIMENTO -->
+      <section class="slide" data-slide="5">
+        <div class="slide-header">
+          <div class="slide-kicker">04. INVESTIMENTO & PACOTES</div>
+          <h2 class="slide-title">Opções Claras para o Porte do Negócio</h2>
+          <p class="slide-subtitle">Escolha o pacote ideal para a temporada. O investimento se paga com pouquíssimas diárias extras.</p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Pacote 1 -->
+          <div class="card">
+            <h3 style="font-size: 1.25rem; color: var(--forest-deep);">Pacote Presença Cactus</h3>
+            <p style="font-size: 0.85rem; color: var(--ink-muted);">Ideal para colocar o camping no ar rapidamente.</p>
+            
+            <div class="package-price">
+              R$ 1.800 <span>pagamento único</span>
+            </div>
+
+            <ul class="package-features">
+              <li>Landing page de alta conversão (mobile-first)</li>
+              <li>Estruturação e otimização do Google Meu Negócio</li>
+              <li>Botão de WhatsApp com mensagem automática de reserva</li>
+              <li>Tratamento de até 15 fotos para a página</li>
+              <li>Versão bilingue básica (Português & Inglês para mochileiros)</li>
+              <li>Publicação em 5 dias úteis</li>
+            </ul>
+
+            <div class="roi-callout">
+              <strong>Retorno:</strong> 9 diárias de chalé ou ~4 finais de semana de barraca cobrem 100% do valor.
+            </div>
+          </div>
+
+          <!-- Pacote 2 -->
+          <div class="card card-highlight">
+            <div class="card-badge">MAIS RECOMENDADO</div>
+            <h3 style="font-size: 1.25rem; color: var(--forest-deep);">Pacote Temporada Completa</h3>
+            <p style="font-size: 0.85rem; color: var(--ink-muted);">Máxima visibilidade para chalés e motorhomes.</p>
+
+            <div class="package-price">
+              R$ 2.800 <span>pagamento único</span>
+            </div>
+
+            <ul class="package-features">
+              <li><strong>Tudo incluído no Pacote Presença</strong></li>
+              <li>Vitrine dedicada e detalhada para os 2 Chalés</li>
+              <li>Sessão fotográfica presencial de 1h (alta resolução)</li>
+              <li>Kit QR Code de Balcão para avaliações no Google</li>
+              <li>FAQ com regras da casa e dicas de praias de Itacaré</li>
+              <li>1 mês de acompanhamento e suporte pós-lançamento incluso</li>
+            </ul>
+
+            <div class="roi-callout" style="background: #eef5e9; border-color: #b2d89b;">
+              <strong>Retorno:</strong> Apenas 14 diárias no chalé durante a alta temporada quitam todo o projeto.
+            </div>
+          </div>
+        </div>
+
+        <!-- Opção de acompanhamento -->
+        <div class="card" style="margin-top: 20px; background: #faf8f3; border: 1px dashed var(--line-strong); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <h4 style="font-size: 1rem; color: var(--forest-deep);">Opcional: Gestão & Acompanhamento Mensal</h4>
+            <p style="font-size: 0.85rem; color: var(--ink-muted);">Atualização de tarifas de alta/baixa temporada, 2 posts mensais no Google Maps e resposta profissional a avaliações.</p>
+          </div>
+          <div style="font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--clay);">
+            R$ 250 <span style="font-size: 0.85rem; font-family: var(--sans); color: var(--ink-muted); font-weight: normal;">/mês (sem fidelidade)</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 6: CRONOGRAMA DE 5 DIAS -->
+      <section class="slide" data-slide="6">
+        <div class="slide-header">
+          <div class="slide-kicker">05. COMO FUNCIONA</div>
+          <h2 class="slide-title">Do Fechamento ao Ar em 5 Dias</h2>
+          <p class="slide-subtitle">Processo leve que não toma o tempo dos proprietários na rotina do camping.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="timeline-day">Dia 1</div>
+            <div class="timeline-title">Alinhamento & Fotos</div>
+            <p class="timeline-desc">Confirmação rápida dos preços, regras e sessão fotográfica rápida de 1 hora.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-day">Dia 2</div>
+            <div class="timeline-title">Ajuste de Conteúdo</div>
+            <p class="timeline-desc">Personalização final dos textos, fotos dos chalés e botões de contato.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-day">Dia 3</div>
+            <div class="timeline-title">Google Meu Negócio</div>
+            <p class="timeline-desc">Otimização completa da ficha no Google Maps e criação do link com QR Code.</p>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-day">Dia 4</div>
+            <div class="timeline-title">Revisão no WhatsApp</div>
+            <p class="timeline-desc">Nanda e Max testam o site no celular e aprovam os fluxos de reserva.</p>
+          </div>
+
+          <div class="timeline-step" style="border-color: var(--moss); background: #f7faf7;">
+            <div class="timeline-day" style="color: var(--moss);">Dia 5</div>
+            <div class="timeline-title">Lançamento Oficial</div>
+            <p class="timeline-desc">Site publicado no domínio próprio, conectado ao Google e pronto para receber hóspedes.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 24px; background: var(--white);">
+          <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1;">
+              <strong style="color: var(--forest-deep); font-size: 0.95rem;">Condições facilitadas:</strong>
+              <p style="font-size: 0.88rem; color: var(--ink-muted);">50% no início do projeto e 50% após o site estar 100% no ar e aprovado por vocês (via Pix ou transferência).</p>
+            </div>
+            <div style="background: rgba(127, 156, 91, 0.15); padding: 10px 18px; border-radius: 999px; font-weight: 700; color: var(--forest-deep); font-size: 0.85rem;">
+              Garantia total de satisfação
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 7: PRÓXIMO PASSO / FECHAMENTO -->
+      <section class="slide" data-slide="7">
+        <div class="slide-header">
+          <div class="slide-kicker">06. DECISÃO & PRÓXIMO PASSO</div>
+          <h2 class="slide-title">Preparar o Camping Cactus para a Alta Temporada</h2>
+          <p class="slide-subtitle">A temporada em Itacaré atrai milhares de turistas. Quem tem presença no Google garante lotação máxima com antecedência.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
+            <h3 style="color: var(--forest-deep); margin-bottom: 12px;">O que precisamos para começar hoje:</h3>
+            <ul class="package-features" style="margin-bottom: 0;">
+              <li>Escolha do pacote ideal (Presença ou Temporada)</li>
+              <li>Agendamento do ensaio de 1h no camping</li>
+              <li>Confirmação da tabela de preços atualizada</li>
+            </ul>
+          </div>
+
+          <div class="stat-box" style="justify-content: center; text-align: center; background: #faf7f0;">
+            <span style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-muted); font-weight: 600;">Contato Direto</span>
+            <div style="font-family: var(--serif); font-size: 1.6rem; color: var(--forest-deep); margin: 8px 0; font-weight: 700;">
+              Vamos colocar o Cactus no topo?
+            </div>
+            <p style="font-size: 0.88rem; color: var(--ink-muted); margin-bottom: 16px;">
+              Estamos à disposição para tirar qualquer dúvida e iniciar os trabalhos imediatamente.
+            </p>
+            <a href="index.html" class="btn-launch-preview" style="align-self: center; font-size: 0.95rem; padding: 10px 20px;">
+              Rever Prévia do Site ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-banner">
+          <h3>Prontos para começar?</h3>
+          <p>O protótipo da landing page já está funcional. Vamos juntos transformar visitantes em reservas diretas!</p>
+          <a href="https://wa.me/5571986682428" target="_blank" class="cta-button">
+            Falar no WhatsApp com Nanda e Max
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 7;
+    let isScrollMode = false;
+
+    const slides = document.querySelectorAll('.slide');
+    const indicator = document.getElementById('slideIndicator');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const modeBtn = document.getElementById('modeBtn');
+
+    function updateSlide() {
+      if (isScrollMode) return;
+
+      slides.forEach(slide => {
+        const slideNum = parseInt(slide.getAttribute('data-slide'));
+        if (slideNum === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      indicator.textContent = `${currentSlide} de ${totalSlides}`;
+      prevBtn.disabled = currentSlide === 1;
+      nextBtn.disabled = currentSlide === totalSlides;
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function changeSlide(direction) {
+      const next = currentSlide + direction;
+      if (next >= 1 && next <= totalSlides) {
+        currentSlide = next;
+        updateSlide();
+      }
+    }
+
+    function toggleMode() {
+      isScrollMode = !isScrollMode;
+      if (isScrollMode) {
+        document.body.classList.add('scroll-mode');
+        modeBtn.textContent = 'Modo Apresentação (Slides)';
+      } else {
+        document.body.classList.remove('scroll-mode');
+        modeBtn.textContent = 'Modo Contínuo';
+        updateSlide();
+      }
+    }
+
+    // Navegação via teclado
+    window.addEventListener('keydown', (e) => {
+      if (isScrollMode) return;
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+        if (currentSlide < totalSlides) changeSlide(1);
+      } else if (e.key === 'ArrowLeft') {
+        if (currentSlide > 1) changeSlide(-1);
+      }
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>

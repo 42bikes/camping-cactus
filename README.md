@@ -6,6 +6,9 @@ Pasta de trabalho para a proposta de landing page + Google Business + acompanham
 
 | Arquivo | O que é |
 |---|---|
+| `proposta-apresentacao.md` | Roteiro completo de pitch e apresentação presencial (10 min) |
+| `preview/proposta.html` | Apresentação interativa de slides/deck da proposta para Nanda e Max |
+| `preview/index.html` | Protótipo funcional da landing page para demonstração ao vivo |
 | `dossie.md` | Pesquisa completa: dados, diagnóstico digital, gaps, oferta e abordagem |
 | `dados.json` | Os mesmos dados em formato estruturado (para usar no site/CRM) |
 | `landing-copy.md` | Wireframe e copy pronta da landing page, com SEO e checklist técnico |
