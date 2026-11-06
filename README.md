@@ -1,59 +1,56 @@
-# Camping Cactus — pacote de prospecção
+# Camping Cactus — Landing Page
 
-Pasta de trabalho para a proposta de landing page + Google Business + acompanhamento do **Camping Cactus**, em Itacaré-BA.
+Landing page estática para o **Camping Cactus** (Itacaré-BA): camping arborizado com barracas, motorhome (até 7 m) e 2 chalés, a poucos minutos a pé das praias.
 
-## Arquivos
+Conceito visual: editorial orgânico (papel, mata, barro). Protótipo funcional pronto para demonstração e publicação.
 
-| Arquivo | O que é |
-|---|---|
-| `proposta-apresentacao.md` | Roteiro completo de pitch e apresentação presencial (10 min) |
-| `preview/proposta.html` | Apresentação interativa de slides/deck da proposta para Nanda e Max |
-| `preview/index.html` | Protótipo funcional da landing page para demonstração ao vivo |
-| `dossie.md` | Pesquisa completa: dados, diagnóstico digital, gaps, oferta e abordagem |
-| `dados.json` | Os mesmos dados em formato estruturado (para usar no site/CRM) |
-| `landing-copy.md` | Wireframe e copy pronta da landing page, com SEO e checklist técnico |
-| `google-business-checklist.md` | Passo a passo do Google Business + cartão de visita com QR |
-| `scrape-instagram.mjs` | Script Node para puxar metadados públicos de um perfil do Instagram |
-| `baixar-fotos.mjs` | Baixa e cataloga fotos públicas do camping (MaCamp + 77camps) |
-| `midia/camping-cactus/` | Acervo de fotos reais + `manifest.json` com origem e metadados |
-| `analise-fotos.html` | Folha de contato para avaliar as fotos antes de usar na prévia |
+## Estrutura
 
-## O que foi confirmado
-
-- Instagram ativo: **3.782 seguidores**
-- WhatsApp: **+55 71 98668-2428**
-- Endereço: **Rua dos Jacarandás, 94 — Alto da Boa Vista, Itacaré-BA**
-- Donos: **Nanda e Max**
-- Estrutura: barracas, motorhome até 7 m, 2 chalés, cozinha, wi-fi, chuveiro quente, lavanderia, churrasqueira, pet friendly
-- Reputação: **4,1 no MaCamp (9 avaliações)**
-- **Não tem site próprio** e **não aparece no itacare.com**
-
-## O que precisa confirmar com os donos
-
-- Preços atuais (barraca, motorhome, chalé, por pessoa)
-- Quantidade e capacidade dos chalés
-- Horário de check-in/check-out e regras
-- Formas de pagamento
-- Autorização para usar as fotos do Instagram
-
-## Como rodar o scraper
-
-```bash
-node scrape-instagram.mjs camping_cactus
+```
+camping-cactus/
+├── preview/              # site estático (raiz de publicação)
+│   ├── index.html        # landing page
+│   ├── proposta.html     # deck de apresentação para os anfitriões
+│   └── assets/           # imagens usadas no site
+├── midia/                # acervo de fotos (origem dos assets)
+├── dados.json            # dados estruturados do camping
+├── landing-copy.md       # wireframe e copy com SEO
+├── dossie.md             # pesquisa e diagnóstico
+└── vercel.json           # configuração de deploy (outputDirectory: preview)
 ```
 
-O Instagram bloqueia IPs de datacenter com frequência. Se retornar `blocked: true`:
+## Rodar localmente
 
-1. Rode da sua rede residencial.
-2. Abra o perfil no navegador logado e copie a bio manualmente.
-3. Para posts e legendas, use uma API paga (Apify, RapidAPI) ou `instaloader --login`.
+Servir a pasta `preview/` em um servidor HTTP (necessário para carregar os assets):
 
-Os dados já coletados manualmente estão em `dados.json` — o script é para os próximos alvos (outros campings).
+```bash
+# Python
+python -m http.server 8123 --directory preview
 
-## Próximos passos sugeridos
+# ou Node
+npx serve preview
+```
 
-1. Confirmar os dados na visita (checklist no fim do `dossie.md`).
-2. Fazer o ensaio de 1h (12 fotos).
-3. Publicar a landing page em 5 dias.
-4. Configurar o Google Business no mesmo dia da publicação.
-5. Oferecer o acompanhamento mensal de R$ 250.
+Acesse: http://127.0.0.1:8123/index.html
+
+## Deploy (Vercel)
+
+O projeto é 100% estático. O `vercel.json` define `preview/` como diretório de saída, então o Vercel publica `preview/index.html` na raiz do domínio e resolve os assets em `preview/assets/`.
+
+```bash
+# via CLI
+vercel --prod
+
+# ou conecte o repositório no dashboard da Vercel (Framework: Other)
+```
+
+## Antes de publicar
+
+- Confirmar preços, depoimentos e detalhes com os anfitriões (Nanda e Max).
+- Substituir fotos de acervo público por fotos autorizadas.
+- Remover o aviso de prévia (`.preview-note`) do `index.html`.
+- Configurar o Google Business Profile.
+
+## Licença
+
+Projeto de prospecção/comercial. Uso restrito ao Camping Cactus.
