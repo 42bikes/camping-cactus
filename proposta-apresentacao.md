@@ -44,16 +44,18 @@ Este roteiro foi desenhado para conduzir uma reunião presencial (ou conversa de
 * **Fala sugerida:**
   > *"Junto com o site, nós vamos arrumar a ficha de vocês no Google Meu Negócio. Vamos colocar fotos oficiais e gerar um display com QR Code para deixar no balcão da recepção. No momento do checkout ou do Pix, o hóspede só aponta o celular e deixa 5 estrelas. É assim que passamos de 9 para mais de 30 avaliações rapidamente."*
 
-### Minuto 8 a 10: Oferta Comercial e Fechamento (Slide 5, 6 & 7)
-* **Objetivo:** Apresentar os dois pacotes de forma simples e ancorar no retorno financeiro (diárias).
+### Minuto 8 a 10: Oferta Comercial, Permuta e Fechamento (Slides 5, 6, 7 & 8)
+* **Objetivo:** Apresentar pacotes acessíveis (teto de R$ 1.150), possibilidade de permuta e reforçar a credibilidade pessoal do Arthur.
 * **Fala sugerida:**
-  > *"Para colocar tudo isso rodando antes do pico da temporada, eu preparei duas opções:"*
-  * **Pacote Presença (R$ 1.800):** Landing Page responsiva + Google Meu Negócio configurado + WhatsApp pré-preenchido + versão bilingue (PT/EN).
-  * **Pacote Temporada Completa (R$ 2.800 - Recomendado):** Tudo do anterior + vitrine completa dos chalés + ensaio fotográfico presencial de 1h + kit QR Code de balcão + 1 mês de acompanhamento.
-* **Ancoragem de ROI:**
-  > *"Com apenas cerca de 10 a 14 diárias no chalé, vocês já pagam 100% desse investimento. Todo o resto que entrar é lucro direto no bolso de vocês, sem comissão do Booking ou Airbnb."*
+  > *"Para colocar tudo isso rodando antes do pico da temporada, eu estruturei valores justos e sem pegadinhas:"*
+  * **Pacote Presença (de R$ 980 por R$ 590 à vista ou 2x R$ 295 no Pix):** Landing Page responsiva + Google Maps / Meu Negócio configurado + WhatsApp pré-preenchido + versão bilingue (PT/EN).
+  * **Pacote Temporada Completa (de R$ 1.600 por R$ 1.150 à vista ou 2x R$ 575 no Pix - Recomendado):** Tudo do anterior + vitrine dedicada dos 2 chalés + ensaio fotográfico presencial de 1h + placa QR Code de balcão + 1 mês de suporte.
+  * **Facilidade com Permuta:**
+    > *"E se vocês preferirem economizar o caixa agora, podemos combinar um modelo híbrido: R$ 650 em dinheiro + 2 diárias de chalé fora de feriados. O que importa é colocarmos o Cactus no ar para a temporada!"*
+* **Ancoragem de Retorno:**
+  > *"Com apenas 1 casal alugando o chalé em 1 único feriado prolongado (2 a 4 noites), o site já está 100% quitado. Todo o resto do ano é lucro livre sem pagar 20% pro Booking."*
 * **Condição:**
-  > *"Entrada de 50% para iniciarmos o ensaio e 50% somente no quinto dia, com o site no ar e 100% aprovado por vocês."*
+  > *"50% de entrada para iniciarmos o ensaio e 50% somente no quinto dia, com o site no ar e 100% aprovado por vocês."*
 
 ---
 
@@ -63,7 +65,7 @@ Este roteiro foi desenhado para conduzir uma reunião presencial (ou conversa de
 |---|---|
 | *"O Instagram já nos dá bastante hóspede."* | *"O Instagram é fantástico para quem já está navegando na rede, mas ele não atende quem está procurando ativamente no Google para o próximo feriado. O site captura quem já tem a mala pronta e o dinheiro na mão para reservar."* |
 | *"Não temos tempo para gerenciar mais uma ferramenta."* | *"Vocês não precisam gerenciar nada novo. O site não tem painel complexo: todas as mensagens caem diretamente no WhatsApp onde vocês já atendem hoje."* |
-| *"Está um pouco fora do orçamento agora."* | *"A gente pode começar com o Pacote Presença (R$ 1.800) em duas vezes (50% agora e 50% na entrega), e assim que os chalés começarem a encher com o Google, vocês expandem para o pacote completo."* |
+| *"Está um pouco fora do orçamento agora."* | *"Podemos fazer o Pacote Presença (R$ 590 em 2x de R$ 295) ou utilizar a permuta parcial de diárias, abatendo o valor em estadias tranquilas nos chalés."* |
 
 ---
 
