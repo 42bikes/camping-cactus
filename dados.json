@@ -1,0 +1,128 @@
+{
+  "meta": {
+    "cliente": "Camping Cactus",
+    "cidade": "Itacaré",
+    "estado": "BA",
+    "coletado_em": "2026-11-05",
+    "objetivo": "landing page + Google Business + acompanhamento",
+    "status": "pesquisa pública; dados de preço e chalés precisam de confirmação"
+  },
+  "identidade": {
+    "nome": "Camping Cactus",
+    "instagram": "https://www.instagram.com/camping_cactus/",
+    "seguidores": 3782,
+    "seguindo": 2430,
+    "bio": "📍 Itacaré Bahia | 🏕️ Estrutura para barracas, trailers & Motorhomes | 🌳 Com muita sombra e tranquilidade | 📍 O mais bem localizado de Itacaré | 🌊 | Faça sua reserva ⤵️",
+    "whatsapp": "+55 71 98668-2428",
+    "whatsapp_link": "https://wa.me/5571986682428",
+    "proprietarios": ["Nanda", "Max"],
+    "destaques_instagram": ["Chalés", "Feedbacks", "viva hoje", "Destaques", "Motorhome"]
+  },
+  "endereco": {
+    "logradouro": "Rua dos Jacarandás, 94",
+    "bairro": "Alto da Boa Vista",
+    "cidade": "Itacaré",
+    "estado": "BA",
+    "cep": "45530-000",
+    "referencia": "Ao lado da torre nova de telefonia; após a entrada de Itacaré, virar à direita na rua do poste coqueiro",
+    "fontes": ["TripAdvisor", "77camps", "MaCamp"]
+  },
+  "estrutura": {
+    "acomodacoes": [
+      "barracas",
+      "trailers",
+      "motorhomes de até 7 metros",
+      "2 chalés (a confirmar)"
+    ],
+    "comodidades": [
+      "água potável",
+      "wi-fi",
+      "cozinha comunitária equipada",
+      "banheiros",
+      "chuveiro quente",
+      "lavanderia",
+      "churrasqueira",
+      "estacionamento incluído",
+      "energia 110 V",
+      "pet friendly",
+      "acesso à praia",
+      "área arborizada com redes"
+    ],
+    "publico": ["mochileiros", "casais", "motorhome", "viajantes com pet"],
+    "preco": {
+      "valor": "R$ 25–35 por pessoa",
+      "fonte": "77camps",
+      "status": "a confirmar com os proprietários"
+    }
+  },
+  "localizacao": {
+    "praias": "15–20 minutos a pé",
+    "pontos": {
+      "Mirante Ponta do Xaréu": "1,7 km",
+      "Praia de Jeribucaçu": "4,7 km",
+      "Cachoeira do Leandro": "4,9 km",
+      "Estacionamento Engenhoca/Havaizinho": "7,7 km"
+    }
+  },
+  "reputacao": {
+    "macamp": {
+      "nota": 4.1,
+      "avaliacoes": 9,
+      "url": "https://macamp.com.br/guia/guia/campings/brasil/bahia/itacare/camping-cactus-do-rustico/"
+    },
+    "tripadvisor": {
+      "existe": true,
+      "url": "https://www.tripadvisor.com.br/Hotel_Review-g667504-d27410704-Reviews-Camping_Cactus-Itacare_State_of_Bahia.html"
+    },
+    "77camps": {
+      "avaliacoes": 0,
+      "url": "https://www.77camps.com/camping/13516/camping-cactus"
+    },
+    "concorrentes": {
+      "Camping Rai e Luc": { "nota": 4.6, "avaliacoes": 33 },
+      "Camping Pituba": { "nota": 3.8, "avaliacoes": 8 },
+      "Camping Krishna": { "nota": 3.8, "avaliacoes": 4 },
+      "Rancho Semani": { "nota": 3.6, "avaliacoes": 5 }
+    }
+  },
+  "presenca_digital": {
+    "site_proprio": false,
+    "google_business": "verificar; provavelmente incompleto",
+    "itacare_com": false,
+    "booking": false,
+    "airbnb": false,
+    "tripadvisor": true,
+    "macamp": true,
+    "77camps": true,
+    "youtube": "aparece em vídeos de terceiros"
+  },
+  "dores": [
+    "Quem busca 'camping em Itacaré' no Google não encontra o Cactus.",
+    "Não tem site próprio: a reserva depende de DM/WhatsApp.",
+    "Não aparece no itacare.com, o portal local mais antigo de turismo.",
+    "Google Business provavelmente sem fotos, preços e horários atualizados.",
+    "Só 9 avaliações no MaCamp, contra 33 do Camping Rai e Luc.",
+    "Chalés não têm página própria com fotos, preço e disponibilidade.",
+    "Preços não são públicos: o turista precisa perguntar.",
+    "Conteúdo do Instagram não é aproveitado para SEO."
+  ],
+  "oportunidades": [
+    "Ser o primeiro camping de Itacaré com site próprio + SEO local.",
+    "Transformar os 3,8 mil seguidores em reservas diretas.",
+    "Página dos chalés com fotos, preço e botão de reserva.",
+    "Google Business com fotos, posts, horário e QR de avaliação.",
+    "Versão EN/ES para gringos e motorhome internacional.",
+    "Guia de trilhas/praias do Cactus (PWA offline) como diferencial.",
+    "Pacote de avaliações: meta de 30 reviews em 90 dias.",
+    "Parceria com o Guia Digital de Itacaré para aparecer no quarto das pousadas."
+  ],
+  "fontes": [
+    "https://www.instagram.com/camping_cactus/",
+    "https://www.77camps.com/camping/13516/camping-cactus",
+    "https://www.tripadvisor.com.br/Hotel_Review-g667504-d27410704-Reviews-Camping_Cactus-Itacare_State_of_Bahia.html",
+    "https://macamp.com.br/guia/guia/campings/brasil/bahia/itacare/camping-cactus-do-rustico/",
+    "https://campingbrasil.net.br/campings/camping-cactus-itacare-ba",
+    "https://www.trip.com/travel-guide/attraction/itacare/camping-cactus-146530035/",
+    "https://itacare.com/itacare/hospedagem/camping/"
+  ]
+}

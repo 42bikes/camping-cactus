@@ -1,0 +1,14 @@
+# Dependências e artefatos locais
+node_modules/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Saídas do scraper do Instagram (dados brutos, não versionar)
+instagram-*.html
+instagram-*.json
+
+# Rascunhos e exports temporários
+*.tmp
+*.bak
