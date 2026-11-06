@@ -11,6 +11,9 @@ Pasta de trabalho para a proposta de landing page + Google Business + acompanham
 | `landing-copy.md` | Wireframe e copy pronta da landing page, com SEO e checklist técnico |
 | `google-business-checklist.md` | Passo a passo do Google Business + cartão de visita com QR |
 | `scrape-instagram.mjs` | Script Node para puxar metadados públicos de um perfil do Instagram |
+| `baixar-fotos.mjs` | Baixa e cataloga fotos públicas do camping (MaCamp + 77camps) |
+| `midia/camping-cactus/` | Acervo de fotos reais + `manifest.json` com origem e metadados |
+| `analise-fotos.html` | Folha de contato para avaliar as fotos antes de usar na prévia |
 
 ## O que foi confirmado
 
