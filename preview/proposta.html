@@ -567,21 +567,133 @@
       font-weight: 600;
     }
 
-    /* Botão Flutuante de WhatsApp Final */
-    .whatsapp-full-btn {
+    /* Botão de Interesse & Celebração */
+    .interest-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--forest) 0%, var(--moss) 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.02rem;
+      padding: 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      background: #25d366;
-      color: #0b2b14;
-      font-weight: 800;
-      font-size: 0.95rem;
+      gap: 10px;
+      box-shadow: 0 8px 24px rgba(30, 58, 45, 0.28);
+      margin-top: 14px;
+      transition: all 0.2s ease;
+    }
+    .interest-btn:active {
+      transform: scale(0.97);
+    }
+    .interest-btn.clicked {
+      background: linear-gradient(135deg, var(--clay) 0%, #d46b3b 100%);
+    }
+
+    /* Balões Flutuantes Subindo */
+    .balloons-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    .floating-balloon {
+      position: absolute;
+      bottom: -60px;
+      font-size: 2.2rem;
+      user-select: none;
+      animation: floatUp 3.2s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      85% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-115vh) rotate(25deg);
+        opacity: 0;
+      }
+    }
+
+    /* Modal de Encerramento (Finalizar) */
+    .finish-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(19, 36, 27, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .finish-modal.active {
+      display: flex;
+      animation: fadeIn 0.25s ease-out;
+    }
+    .finish-modal-box {
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      padding: 30px 22px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    }
+    .finish-modal-box h3 {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: var(--forest-deep);
+      margin: 10px 0 8px 0;
+    }
+    .finish-modal-box p {
+      font-size: 0.86rem;
+      color: var(--ink-muted);
+      margin-bottom: 20px;
+      line-height: 1.45;
+    }
+    .finish-modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .finish-btn-primary {
+      background: var(--clay);
+      color: #fff;
+      font-weight: 700;
       padding: 14px;
       border-radius: 999px;
       text-decoration: none;
-      margin-top: 14px;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+      font-size: 0.95rem;
+      display: block;
+    }
+    .finish-btn-secondary {
+      background: transparent;
+      color: var(--forest-deep);
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line-strong);
+      text-decoration: none;
+      font-size: 0.85rem;
+      cursor: pointer;
     }
 
     /* Gesto de Swipe Visual Hint */
@@ -894,40 +1006,40 @@
 
       <!-- CARD 8: CRONOGRAMA & FECHAMENTO -->
       <section class="story-card" data-index="7">
-        <div class="kicker">07. Próximo Passo</div>
+        <div class="kicker">🌿 Como Colocamos no Ar</div>
         <h2 class="card-title">No ar em 5 dias úteis</h2>
-        <p class="card-subtitle">Sem atrapalhar em nada a rotina do camping:</p>
+        <p class="card-subtitle">Sem atrapalhar em nada a rotina de vocês no camping:</p>
 
         <div class="timeline-mobile">
           <div class="timeline-row">
             <div class="timeline-badge">Dia 1</div>
             <div class="timeline-info">
-              <h4>Briefing & Fotos</h4>
-              <p>Confirmação de preços, regras e sessão rápida de fotos.</p>
+              <h4>Organização, Briefing e Fotos</h4>
+              <p>Alinhamento dos detalhes, regras e fotos reais no camping.</p>
             </div>
           </div>
 
           <div class="timeline-row">
             <div class="timeline-badge">Dia 2</div>
             <div class="timeline-info">
-              <h4>Ajuste de Conteúdo</h4>
-              <p>Personalização dos chalés, motorhome e botões.</p>
+              <h4>Textos & Estrutura da Página</h4>
+              <p>Montagem do espaço de barracas, motorhome e chalés.</p>
             </div>
           </div>
 
           <div class="timeline-row">
             <div class="timeline-badge">Dia 3</div>
             <div class="timeline-info">
-              <h4>Google Meu Negócio</h4>
-              <p>Ficha no mapa + QR Code de avaliações para o balcão.</p>
+              <h4>Google Maps & Placa QR Code</h4>
+              <p>Ficha no mapa configurada e arte pronta para o balcão.</p>
             </div>
           </div>
 
           <div class="timeline-row">
             <div class="timeline-badge">Dia 4</div>
             <div class="timeline-info">
-              <h4>Revisão no WhatsApp</h4>
-              <p>Vocês testam tudo no celular e aprovam.</p>
+              <h4>Revisão no Próprio Celular</h4>
+              <p>Vocês testam tudo no WhatsApp e dizem o que acharam.</p>
             </div>
           </div>
 
@@ -935,15 +1047,62 @@
             <div class="timeline-badge final">Dia 5</div>
             <div class="timeline-info">
               <h4>Lançamento Oficial 🚀</h4>
-              <p>Site publicado e recebendo turistas da temporada.</p>
+              <p>Site no ar com endereço oficial, pronto para a temporada.</p>
             </div>
           </div>
         </div>
 
-        <a href="https://wa.me/5571986682428?text=Oi%20Arthur!%20Vi%20a%20proposta%20do%20site%20do%20Camping%20Cactus%20e%20gostaria%20de%20combinar%20os%20detalhes." target="_blank" class="whatsapp-full-btn">
-          💬 Falar no WhatsApp com Arthur
-        </a>
+        <!-- AGRADECIMENTO CARINHOSO -->
+        <div class="touch-box" style="background: #faf7f0; border: 1px solid var(--line); margin-top: 14px; padding: 14px; text-align: center;">
+          <h4 style="color: var(--forest-deep); font-size: 0.92rem; margin-bottom: 4px; font-weight: 700;">
+            Obrigado pelo carinho e pela atenção!
+          </h4>
+          <p style="font-size: 0.8rem; color: var(--ink-muted); line-height: 1.45;">
+            É um prazer imenso estar aqui no Camping Cactus vivenciando o dia a dia. Foi muito legal montar essa ideia para vocês.
+          </p>
+        </div>
+
+        <!-- BOTÃO INTERATIVO DE INTERESSE (COM BALÕES) -->
+        <button class="interest-btn" id="btnInterest" onclick="celebrateInterest()">
+          🎈 Eu gostei, tenho interesse!
+        </button>
+
+        <div id="interestFeedback" style="display: none; background: #edf6eb; border: 1px solid #b7dbab; border-radius: 12px; padding: 12px; margin-top: 10px; text-align: center;">
+          <p style="color: var(--forest-deep); font-weight: 700; font-size: 0.88rem;">
+            🎉 Que alegria! Vamos combinar com calma!
+          </p>
+          <p style="color: var(--ink-muted); font-size: 0.76rem; margin-top: 2px;">
+            A gente troca uma ideia no camping ou toma um café quando ficar bom para vocês.
+          </p>
+        </div>
       </section>
+
+    </main>
+
+    <!-- MODAL DE ENCERRAMENTO (FINALIZAR) -->
+    <div class="finish-modal" id="finishModal">
+      <div class="finish-modal-box">
+        <div style="font-size: 2.2rem; margin-bottom: 6px;">🎉</div>
+        <h3>Obrigado, Nanda e Max!</h3>
+        <p>
+          Foi um prazer compartilhar essa ideia com vocês. A gente se encontra pelo camping para tomar um café e conversar sem pressa!
+        </p>
+        <div class="finish-modal-actions">
+          <a href="index.html" target="_blank" class="finish-btn-primary">
+            🌐 Abrir e Navegar no Site do Cactus ↗
+          </a>
+          <button class="finish-btn-secondary" onclick="restartPresentation()">
+            🔄 Rever a Apresentação do Início
+          </button>
+          <button class="finish-btn-secondary" style="border: none; color: var(--ink-muted); padding: 6px;" onclick="closeFinishModal()">
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- OVERLAY DE BALÕES CELEBRATIVOS -->
+    <div class="balloons-overlay" id="balloonsContainer"></div>
 
     </main>
 
@@ -1002,8 +1161,47 @@
       if (currentIndex < totalCards - 1) {
         showCard(currentIndex + 1);
       } else {
-        // No último card, avança para o WhatsApp ou reinicia
-        window.open('https://wa.me/5571986682428', '_blank');
+        // No último card, abre o modal de encerramento
+        openFinishModal();
+      }
+    }
+
+    function openFinishModal() {
+      celebrateBalloons();
+      document.getElementById('finishModal').classList.add('active');
+    }
+
+    function closeFinishModal() {
+      document.getElementById('finishModal').classList.remove('active');
+    }
+
+    function restartPresentation() {
+      closeFinishModal();
+      showCard(0);
+    }
+
+    // Ação do Botão "Eu gostei, tenho interesse!"
+    function celebrateInterest() {
+      const btn = document.getElementById('btnInterest');
+      btn.classList.add('clicked');
+      btn.innerHTML = '🎉 Que massa! Vamos combinar! ✓';
+      document.getElementById('interestFeedback').style.display = 'block';
+      celebrateBalloons();
+    }
+
+    // Gerador de Balões Flutuantes Subindo
+    function celebrateBalloons() {
+      const container = document.getElementById('balloonsContainer');
+      const emojis = ['🎈', '🎉', '🌿', '✨', '🏕️', '❤️', '🎈', '🎊'];
+      for (let i = 0; i < 22; i++) {
+        const b = document.createElement('div');
+        b.className = 'floating-balloon';
+        b.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        b.style.left = (Math.random() * 88 + 4) + 'vw';
+        b.style.animationDuration = (2.2 + Math.random() * 1.6) + 's';
+        b.style.animationDelay = (Math.random() * 0.5) + 's';
+        container.appendChild(b);
+        setTimeout(() => b.remove(), 4200);
       }
     }
 
